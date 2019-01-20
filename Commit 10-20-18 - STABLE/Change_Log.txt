@@ -1,0 +1,217 @@
+
+
+NEXT!!!
+-------------------------------------------------------------------------------
+
+***Task_4**********************************************************************
+
+- Dialogue tiles
+-- Need to make unique story tiles with unique text trees.
+-- These must be custom made.
+
+***Task_5**********************************************************************
+
+- Dungeon.
+-- A new dsl with random tile arrangement, some loot, some neutral, some enemy, some puzzle.
+-- The dsl must randomize every time it's generated.
+--- But it must always contain an exit tile!
+
+- Dungeon entrance tile
+-- The player accesses the dungeon from a DUNGEON ENTRACE TILE in the world. 
+--- They enter  the dungeon grid on a random, non-exit tile.
+
+***Task_6**********************************************************************
+
+- format all new text.
+
+- Make sub menus from the main menu?
+
+*******************************************************************************
+
+- PHASE TWO END GOAL: 
+-- Game has basic functionality! Tasks (3/6) complete
+
+
+Pending...(stuck)
+-------------------------------------------------------------------------------
+
+- The attack function is verrry bulky. There should be some way to condense it.
+-- Something like...one script runs if both enemies are alive. When one dies, we reassign the enemy variable and toss it back to the regular attack function.
+--- (regular attack function can be found in 6-26-18 commmit)
+
+
+
+Finished!!!
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+10.20.18
+
+- Completed QuestTile functions, added to WORLD.PY
+-- Not the most modifiable tile, but it should serve our purposes.
+- Added an option to check stats from the main menu
+
+-------------------------------------------------------------------------------
+10.17.18
+
+- Created the locked door tile class and the simple passage tile class
+-- Added a new action option to game.py
+-- Added try door function to player.py
+
+-------------------------------------------------------------------------------
+09.27.18
+
+- Added quit (exit) functionality to main menu.
+
+-------------------------------------------------------------------------------
+09.26.18
+
+- Finished puzzle tile; now works with new inventory system.
+
+-------------------------------------------------------------------------------
+09.09.18
+
+- Finished the new trader tile. It now works with the new inventory system.
+-- Implemented in world.py.
+- Made new commit.
+
+-------------------------------------------------------------------------------
+08.26.18
+
+- Finished building the new FindItemTile class. It now works with the new inventory system.
+- Started to migrate newly created functions into their proper modules.
+- Removed build_starting_inventories function from player.py
+-- It placed a NoneType object in the player's armor slots instead of leaving them empty.
+- Fixed armor_check function in player.py to work with new inventory system.
+- TASK 1 COMPLETE!
+
+- Now, game.py and player.py import an instances file as main_map.
+
+-------------------------------------------------------------------------------
+08.25.18
+
+- Split the display inventory function into seperate functions.
+- Finished inventory display functions.
+- Saved a commit before implementation of new functions.
+
+-------------------------------------------------------------------------------
+08.19.18
+
+- Seperated the player's inventory into its own class. Player class much less bulky now.
+
+-------------------------------------------------------------------------------
+08.17.18
+
+- Finished formatting tasks.
+- Created new task list. Set phase two goals.
+- Started task one.
+-- Built a new inventory system.
+-- Built a new map tile that checks if the player's inventory is full.
+
+-------------------------------------------------------------------------------
+08.14.18
+
+- Implemented text box
+- Formatted text generated in game.py and player.py
+- Started to format text in world.py, unfinished.
+-------------------------------------------------------------------------------
+08.13.18
+
+- Figured out a rough way to create text boxes. Needs further work. See Testing.
+-------------------------------------------------------------------------------
+08.12.18
+
+- Started to format text. Made the inventory more readable. Starting to the same each room's intro text.
+
+-------------------------------------------------------------------------------
+08.11.18
+
+- Created a new map with all new instances. It's a basic game!
+-- Bug tested it. Some small bugs remain, but nothing that crashes the game!
+-- Adjusted game.py to work with the new instances file.
+
+-------------------------------------------------------------------------------
+08.10.18
+
+- After many days work, I found a solution! I have a working model of the game that can accept instances instead of classes.
+-- Re-made several functions in game.py and world.py
+--- Restructured the map using an Ordered Dict.
+- Finished instancing project.
+- Made it so the player only has the option to heal if they have a consumable object in their inventory.
+- Made a seperate attack function for MultiEnemyTile instances.
+- SAVED a stable commmit
+- Commented new code
+
+-------------------------------------------------------------------------------
+07.07.18
+
+- Started to update the world.PuzzleTile.
+- Fucked everything up. Need to go back to stable and fix everything.
+
+-------------------------------------------------------------------------------
+07.03.18
+
+- Figured out how best to structure classes and instances.
+- Created a working model in testing, now attempting to replicate that model throughout the other modules.
+- Created dialog module, where I can store dialog trees. Tile instances can have unique dialog trees. Just have to make sure the npc_list matches.
+- Enemies module is new-stable.
+- NPCs module is new-stable.
+- items is new-stable.
+
+-------------------------------------------------------------------------------
+07.01.18
+
+- Added a simple dialog option to quest tile so player can decide whether to complete the quest or not.
+- fixed item names so they don't have a new line at the end of them.
+- Created working quest tile.
+- Created working quest item. Cannot be sold.
+- Amended puzzle tile to accept text that is lowercase or uppercase.
+- Created a neutral tile. A 'town style' tile.
+-- Contains one or more npcs with unique dialog trees.
+
+- Created instances and populator modules.
+-- instances allows the user to create new instances of items, npcs, enemies, tiles.
+-- The user slots their instances into the populator.
+-- The game pulls from the populator.
+
+- Game has a lot more functionality and is pretty stable. Made commit. 
+
+
+-------------------------------------------------------------------------------
+6.29.18
+
+- Added more tasks, including a phase 1 end goal.
+- Added documentation to maptile types that lacked it.
+- started construction of QuestTile type
+
+-------------------------------------------------------------------------------
+06.28.18
+
+- Implemented Puzzletile and Cluetile. Added related functionality in player and game.
+-- Code is fairly stable at this point: Created new commit
+
+- Made a quest_object item type. Seperated the questgiver NPC type into its own category.
+
+-------------------------------------------------------------------------------
+06.27.18
+
+- Fixed enemy tile text so that it's spaced out better when it prints.
+- Started building the puzzle room. Puzzletile and Cluetile.
+
+-------------------------------------------------------------------------------
+06.26.18
+
+- Document man enemy and man enmey tile. Check player armor calc in player class.
+- Made multienemytile
+- adjusted player.attack to adapt if there are two enemies.
+
+-------------------------------------------------------------------------------
+pre-06.26.18
+
+Armor is working.
+FindSheildTile and FindHelmetTile do not allow player to pick up item if they already have one.
+
+Filled out instances for all items.
+Made NPC instances.
+
+Made a man enemy with weapons and armor.
+Altered the player.attack method so that it checks to see if the enemy has armor.
