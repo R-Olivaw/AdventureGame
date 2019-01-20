@@ -29,6 +29,7 @@ bronze_boots = items.Boots("Bronze Boots", "Shiny boots\n", 5, 2)
 shit_boots = items.Boots("Shit boots", "Shitty boots", 1, 0)
 leather_boots = items.Boots("Leather boots", "Worn out boots", 2, 0)
 cotton_pants = items.Pants("Cotton Pants", "Plain pants", 0, 0)
+suede_shoes = items.Boots("Suede Shoes", "They're a dark blue color\n", 1, 0)
 
 #Quest items
 trophy_of_zenorath = items.Quest_Object("Trophy of Zenorath", "A trophy that once belonged to Zenorath", 100)
