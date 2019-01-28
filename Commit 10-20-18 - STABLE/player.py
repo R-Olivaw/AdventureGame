@@ -214,7 +214,7 @@ class Player:
             print('   * ' + str(item))
             
         print("""
-        ---Chest Slot--------------------------------------------------------
+          ---Chest Slot--------------------------------------------------------
         """)
         
         for item in self.inventory.chest_slot.ls:
