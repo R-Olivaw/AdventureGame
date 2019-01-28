@@ -36,26 +36,84 @@ class SteveTile(MapTile):
         return text
     
     def dialog_tree(self):
-        import utilities
-        print(utilities.boxer.make_text_box("\n'I'm crazy Steve!'\n\n"))
+        from utilities import boxer
+        print(boxer.make_text_box("\n'Me Steve. This my spot. What you want?'\n\n"))
         
         convo_over = False
         
         while not convo_over:
-            print("\n1. 'Please don't hurt me!'\n2. 'I'll hurt you!'\n3. 'Whatever, weirdo...'\n")
+            print("\n1. 'Is there any food here?'\n2. 'What're you doing here Steve?'\n3. 'Do you know how to get out of here?'\n")
             ans = input('Answer: ')
             
+            #------------------------------------------------------------------
+            
             if ans == '1':
-                print(utilities.boxer.make_text_box("\n'AH HA HA HA HAAAAH!\n\n"))
-                convo_over = True
+                print(boxer.make_text_box("\n'Hmph Mebbe?'\n\n"))
+                print("\n1.'So...no?'\n2.'Whatever, man...'\n")
+                rep = input('Answer: ')
                 
+                if rep == '1':
+                    print(boxer.make_text_box("\n'Heh he heh...no.'\n\n"))
+                    convo_over = True
+                    
+                elif rep == '2':
+                    print(boxer.make_text_box("\n'Heh'\n\n"))
+                    convo_over = True
+                    
+                else:
+                    print(boxer.make_text_box("\n'Ahuh?'\n\n"))
+                
+            #------------------------------------------------------------------
+            
             elif ans == '2':
-                print(utilities.boxer.make_text_box("\n'AHHHHH!\n\n"))
-                convo_over = True
+                print(boxer.make_text_box("\n'Steve here to make sure they don't get out!'\n\n"))
+                print("\n1. '...so what don't get out?'\n2. 'Ok, good luck with that...'\n\n")
+                rep = input('Answer: ')
+                
+                if rep == '1':
+                    print(boxer.make_text_box("\n'The chows...'\n\n"))
+                    print("\n1. 'Like the dogs?'\n2. 'Ok, good luck with that!'")
+                    con = input('Answer: ')
+                    
+                    if con == '1':
+                        print(boxer.make_text_box("\n'Heh, yeah! Better watch out...'\n\n"))
+                        convo_over = True
+                    
+                    elif con == '2':
+                        print(boxer.make_text_box("\n'Oh, I eat 'em when I find 'em...'\n\n"))
+                        convo_over = True
+                    
+                    else:
+                        print(boxer.make_text_box("\n'Ahuh?'\n\n"))
+                    
+                elif rep == '2':
+                    print(boxer.make_text_box("\n'Heh heh'\n\n"))
+                    convo_over = True
+                    
+                else:
+                    print(boxer.make_text_box("\n'Ahuh?'\n\n"))
+                
+            #------------------------------------------------------------------
                 
             elif ans == '3':
-                print(utilities.boxer.make_text_box("\n HA HOO HOO HOO...\n\n"))
-                convo_over = True
+                print(boxer.make_text_box("\n'Heh, you gonna need a sword...'\n\n"))
+                print("\n1. 'Why?'\n2. 'Ok, thanks!'")
+                con = input('Answer: ')
+                
+                if con == '1':
+                    print(boxer.make_text_box("\n'Can't kill the devil with you hands...'\n\n"))
+                    convo_over = True
+                
+                elif con == '2':
+                    print(boxer.make_text_box("\n'Heh heh heh...\n\n"))
+                    convo_over = True
+                
+                else:
+                    print(boxer.make_text_box("\n'Ahuh?'\n\n"))
+                
+                
+            #------------------------------------------------------------------
+            
             else:
-                print(utilities.boxer.make_text_box("\n'AUH?'\n\n"))
+                print(boxer.make_text_box("\n'AUH?'\n\n"))
                 
