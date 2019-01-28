@@ -42,7 +42,7 @@ class SteveTile(MapTile):
         convo_over = False
         
         while not convo_over:
-            print("\n1. 'Is there any food here?'\n2. 'What're you doing here Steve?'\n3. 'Do you know how to get out of here?'\n")
+            print("\n1. 'Is there any food here?'\n2. 'What're you doing here Steve?'\n3. 'Do you know how to get out of here?'\n4. 'Stay away from me, you wretch!'\n")
             ans = input('Answer: ')
             
             #------------------------------------------------------------------
@@ -112,6 +112,25 @@ class SteveTile(MapTile):
                     print(boxer.make_text_box("\n'Ahuh?'\n\n"))
                 
                 
+            #------------------------------------------------------------------
+            
+            elif ans == '4':
+                print(boxer.make_text_box("\n'Arh! What Steve do to you?'\n\n"))
+                print("\n1. 'Just stay away from me, you slug.'\n2. 'I'm sorry...'")
+                con = input('Answer: ')
+                
+                if con == '1':
+                    print(boxer.make_text_box("\n*HISSS*\n\n"))
+                    convo_over = True
+                
+                elif con == '2':
+                    print(boxer.make_text_box("\n*HISSS*\n\n"))
+                    convo_over = True
+                
+                else:
+                    print(boxer.make_text_box("\n*HISSS*\n\n"))
+                    convo_over = True
+            
             #------------------------------------------------------------------
             
             else:
