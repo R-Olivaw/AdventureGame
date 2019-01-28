@@ -235,7 +235,7 @@ class Player:
             print('   * ' + str(item))
             
         print("""
-          ---Sheild Slot--------------------------------------------------------
+          ---Sheild Slot-------------------------------------------------------
         """)
         
         for item in self.inventory.sheild_slot.ls:
