@@ -1,6 +1,6 @@
 from collections import OrderedDict
 import random
-import world, items, enemies, npc, puzzles, utilities
+import world, items, enemies, npc, puzzles, utilities, special_tiles
 from player import Player
 
 '''
@@ -29,7 +29,6 @@ bronze_boots = items.Boots("Bronze Boots", "Shiny boots\n", 5, 2)
 shit_boots = items.Boots("Shit boots", "Shitty boots", 1, 0)
 leather_boots = items.Boots("Leather boots", "Worn out boots", 2, 0)
 cotton_pants = items.Pants("Cotton Pants", "Plain pants", 0, 0)
-suede_shoes = items.Boots("Suede Shoes", "They're a dark blue color\n", 1, 0)
 
 #Quest items
 trophy_of_zenorath = items.Quest_Object("Trophy of Zenorath", "A trophy that once belonged to Zenorath", 100)
@@ -87,10 +86,11 @@ Dialog tile
 -------------------------------------------------------------------------------
 '''
 
-steve_hole = world.InhabitedTile(0, -2,
-                                 [steve],
-                                 utilities.boxer.make_text_box("A dank hole where a dirty man lives. His name is Steve Duncun."),
-                                 utilities.boxer.make_text_box("In the real game, people like me will be able to say more than one line.\nBut we'll still only be a few lines of unfeeling code.'"))
+steve_hole = special_tiles.SteveTile(0, -2,
+                                     [steve],
+                                     utilities.boxer.make_text_box("A dank hole where a dirty man lives. His name is Steve Duncun."),
+                                     )
+
 
 '''
 Tiles
