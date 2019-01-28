@@ -9,7 +9,7 @@ from collections import OrderedDict
 
 #This function shows the actions available to a player in a given tile    
 def get_available_actions(room, player):
-    import world
+    import world, special_tiles
     import items
     inventory = player.inventory
     actions = OrderedDict()
@@ -31,7 +31,7 @@ def get_available_actions(room, player):
             action_adder(actions, 'w', player.move_west, "Go west")
     if isinstance(room, world.TraderTile):
         action_adder(actions, 't', player.trade, "Trade")
-    if (isinstance(room, world.QuestTile) or isinstance(room, world.InhabitedTile)):
+    if (isinstance(room, world.QuestTile) or isinstance(room, world.InhabitedTile) or isinstance(room, special_tiles.MapTile) ):
         action_adder(actions, 'f', player.talk, "Talk")
     if isinstance(room, world.PuzzleTile) and not room.puzzle_solved:
         action_adder(actions, 'f', player.examine_puzzle, "Examine puzzle")
@@ -90,5 +90,5 @@ def play():
         elif not player.is_alive():
             print("\nYour journey has come to a premature end.")
             
-
-play()
+if __name__ == "__main__":     
+    play()
